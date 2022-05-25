@@ -1219,7 +1219,7 @@ PmError pm_macosxcm_init(void)
         macHostError = MIDIClientCreate(CFSTR("PortMidi"), &cm_notify, NULL,
                                         &client);
     } else {  /* see notes above on device scanning */
-        for (int i = 0; i < 100; i++) {
+        for (i = 0; i < 100; i++) {
             // look for any changes before scanning for devices
             CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, true);
             if (i % 5 == 0) Pt_Sleep(1);  /* insert 20 delays */
